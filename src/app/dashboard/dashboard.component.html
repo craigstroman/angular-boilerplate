@@ -1,0 +1,17 @@
+<div class="dashboard">
+  <header>
+    <div class="dashboard-title">
+      <h1>Welcome To The Dashboard</h1>
+    </div>
+  </header>
+  <div class="dashboard-row">
+    <div class="dashboard-row__col">
+      <a [routerLink]="['/posts']" class="dashboard__link">Posts</a>
+    </div>
+  </div>
+  <div class="dashboard-row">
+    <div class="dashboard-row__col">
+      <a [routerLink]="['/']" class="dashboard__link" (click)="signOut()">Logout</a>
+    </div>
+  </div>
+</div>

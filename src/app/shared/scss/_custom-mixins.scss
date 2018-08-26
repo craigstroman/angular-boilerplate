@@ -1,0 +1,69 @@
+@mixin make-text-input($width: null) {
+  display: block;
+  @if ($width) {
+    width: $width;
+  } @else {
+    width: 100%;
+  }
+  height: $input-height;
+  padding: $input-padding-y $input-padding-x;
+  font-size: $font-size-base;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  background-clip: padding-box;
+  border: $input-border-width solid $input-border-color;
+  border-radius: $input-border-radius;
+}
+
+/* @mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:focus, &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+  }
+  &:active, &.active, .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+
+    &:hover, &:focus, &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+      border-color: darken($border, 25%);
+    }
+  }
+  &:active, &.active, .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled, &[disabled], fieldset[disabled] & {
+    &, &:hover, &:focus, &.focus, &:active, &.active {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+@mixin make-button($background) {
+  $color: #fff;
+  $border: 5%;
+  padding
+  cursor: pointer;
+  @if (lightness($background) >= lightness(#aaa)) {
+    $color: #333;
+    $border: .2 * lightness($background);
+  }
+  @include button-variant($color, $background, darken($background, $border));
+} */

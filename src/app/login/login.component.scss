@@ -1,0 +1,35 @@
+@import '../shared/scss/global';
+@import '../shared/scss/custom-mixins';
+
+.login {
+  text-align: center;
+  .login-row {
+    @include make-row();
+    margin-bottom: 20px;
+    &:first-child {
+      margin-top: 20px;
+    }
+    .login-row__col {
+      @include make-col-ready();
+      @include make-col(12);
+      .login-input {
+        @include make-text-input(300px);
+        margin: 0 auto;
+        &.login-input-error {
+          border: 1px solid $red;
+        }
+      }
+    }
+    .login__btn {
+      @include button-variant($blue, $blue);
+      @include button-size($input-btn-padding-y, $input-btn-padding-x, 1.5em, $input-btn-line-height, $btn-border-radius);
+      cursor: pointer;
+    }
+  }
+  .error {
+    color: $red;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}

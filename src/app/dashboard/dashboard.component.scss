@@ -1,0 +1,13 @@
+@import '../shared/scss/global';
+.dashboard {
+  text-align: center;
+  font-family: arial, helvetica, sans-serif;
+  .dashboard-row {
+    @include make-row();
+    margin-bottom: 20px;
+    .dashboard-row__col {
+      @include make-col-ready();
+      @include make-col(12);
+    }
+  }
+}

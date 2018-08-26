@@ -1,0 +1,66 @@
+<div class="login">
+  <form [formGroup]="frm">
+
+    <!-- Sign-in error message -->
+    <div class="login-row">
+      <div class="login-row__col">
+      <div class="error" *ngIf="hasFailed">
+        Invalid username or password.
+      </div>
+      </div>
+    </div>
+
+    <div class="login-row">
+      <div class="login-row__col">
+        <input
+          type="text"
+          class="login-username login-input"
+          placeholder="Your username"
+          formControlName="username"
+          (keyup)="updateStatus()"
+          [ngClass]="{'': (!frm.get('username').invalid && frm.get('username').touched) || !usernameInputError,
+            'login-input-error':  (frm.get('username').invalid && frm.get('username').touched) || usernameInputError}"
+        />
+        <div
+          class="error"
+          *ngIf="(frm.get('username').invalid && frm.get('username').touched) || usernameInputError"
+        >
+          <div *ngIf="frm.get('username').hasError('required')">
+            Please enter your username
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-row">
+      <div class="login-row__col">
+        <input
+          type="password"
+          class="login-password login-input"
+          placeholder="Your password"
+          formControlName="password"
+          (keyup)="updateStatus()"
+          [ngClass]="{'': (!frm.get('password').invalid && frm.get('password').touched) || !passwordInputError,
+            'login-input-error':  (frm.get('password').invalid && frm.get('password').touched) || passwordInputError}"
+        >
+        <div
+          class="error"
+          *ngIf="(frm.get('password').invalid && frm.get('password').touched) || passwordInputError"
+        >
+          <div *ngIf="frm.get('password').hasError('required')">
+            Please enter your password
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-row">
+      <div class="login-row__col">
+        <button class="login__btn" (click)="doSignIn()" [disabled]="isBusy">
+          <ng-template [ngIf]="!isBusy">Sign in</ng-template>
+          <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+@import '../shared/scss/global';
+.posts {
+  text-align: center;
+  font-family: arial, helvetica, sans-serif;
+  .posts-row {
+    @include make-row();
+    margin-bottom: 20px;
+    .posts-row__col {
+      @include make-col-ready();
+      @include make-col(12);
+      font-size: 1em;
+      text-align: left;
+    }
+  }
+}

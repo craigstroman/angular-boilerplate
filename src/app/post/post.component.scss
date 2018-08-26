@@ -1,0 +1,12 @@
+@import '../shared/scss/global';
+.post {
+  text-align: center;
+  font-family: arial, helvetica, sans-serif;
+  .post-row {
+    @include make-row();
+    .post-row__col {
+      @include make-col-ready();
+      @include make-col(12);
+    }
+  }
+}
